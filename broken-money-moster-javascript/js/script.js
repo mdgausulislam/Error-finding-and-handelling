@@ -24,7 +24,7 @@ const calculateExpense= () => {
   // calculate balance
   const balance = parseInt(income - expense);
   //   validate income
-  if (expense > income.value) {
+  if (expense > income) {
     alert("Expenses cannot be more than income");
   } else {
     // view total expense and balance
@@ -35,12 +35,13 @@ const calculateExpense= () => {
 
 const calculateSavings = () => {
   // calculate saving amount
+  const income = document.querySelector("#income").value;
   const savePercentage = document.getElementById("save").value;
 //   Validate saving percentage value
   if (savePercentage < 0) {
     alert("Provide positive saving value");
   }
-  const savingAmount = (savePercentage / 100) + income;
+  const savingAmount = (savePercentage / 100) * income;
 
   // calculate remaining balance
   const balance = document.getElementById("balance").innerText;
